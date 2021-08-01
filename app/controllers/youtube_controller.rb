@@ -1,23 +1,21 @@
 class YoutubeController < ApplicationController
 
-  def find_videos(keyword, after: 1.months.ago, before: Time.now)
+  def find_videos(keyword)
     service = Google::Apis::YoutubeV3::YouTubeService.new
-    service.key = 'AIzaSyBAkUkyuD8iIUDQyULece13gDRzk64M-Ig'
+    service.key = 'API-KEY'
 
     next_page_token = nil
     opt = {
       q: keyword,
       type: 'video',
-      max_results: 10,
-      order: :date,
+      max_results: 5,
+      order: :relevance,
       page_token: next_page_token,
-      published_after: after.iso8601,
-      published_before: before.iso8601
     }
     service.list_searches(:snippet, opt)
   end
 
-  def index
-    @youtube_data = find_videos('加藤純一')
+  def search
+    @youtube_data = find_videos(params[:keyword])
   end
 end

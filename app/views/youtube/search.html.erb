@@ -1,7 +1,3 @@
-<input type="serarch">
-<input type="submit" value="検索">
-<br>
-<br>
 <% @youtube_data.items.each do |item| %>
   <% snippet = item.snippet %>
   <%= item.to_json %>

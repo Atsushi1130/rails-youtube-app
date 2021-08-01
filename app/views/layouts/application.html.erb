@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <header>
+      <% if flash[:notice] %>
+        <p class="flash"><%= flash[:notice] %></p>
+      <% end %>
+      <div class="search_container">
+        <%= form_tag("/search",:method => 'get') do %>
+          <input type="text" name="keyword" placeholder="キーワード検索" class="search-box">
+          <input type="submit" value='検索'>
+        <% end %>
+      </div>
+      <div class="header_tag">
+        <%= link_to("プレイリスト作成","/new/playlist",{class: "create_tag"}) %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
