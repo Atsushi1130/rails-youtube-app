@@ -4,9 +4,6 @@
     <div class="playlist-container">
       <div class="playlist-container-left">
         <%= link_to(playlist.name,"playlist/#{playlist.id}/detail",{class: "playlist-name"}) %>
-        <% if playlist.description %>
-          <nobr>説明：<%= playlist.description %></nobr>
-        <% end %>
       </div>
       <div class="playlist-container-right">
         <%= link_to("削除","/delete/#{playlist.id}",{class: "delete-button"}) %>

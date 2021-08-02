@@ -1,7 +1,33 @@
 <% @youtube_data.items.each do |item| %>
   <% snippet = item.snippet %>
-  <%= item.to_json %>
-  <p><%= snippet.title %></p>
-  <p><%= snippet.published_at %><%= snippet.channel_title %></p>
-  <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <div class=contents-container>
+    <p><%= snippet.title %></p>
+    <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <button class="js-modal-open">プレイリストに登録</button>
+    <p><%= item.id.video_id %></p>
+  </div>
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+      <p>登録したいプレイリストを選択してください</p>
+      <% @playlists.each do |playlist| %>
+        <p><%= item.id.video_id %></p>
+        <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{item.id.video_id}",{method: "post"}) %></p>
+      <% end %>
+      <a class="js-modal-close" href="">閉じる</a>
+    </div>
+  </div>
 <% end %>
+
+<script type="text/javascript">
+  $(function(){
+    $('.js-modal-open').on('click',function(){
+        $('.js-modal').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        return false;
+    });
+});
+</script>

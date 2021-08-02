@@ -1,4 +1,5 @@
 class YoutubeController < ApplicationController
+  before_action :flag
 
   def find_videos(keyword)
     service = Google::Apis::YoutubeV3::YouTubeService.new
@@ -8,7 +9,7 @@ class YoutubeController < ApplicationController
     opt = {
       q: keyword,
       type: 'video',
-      max_results: 5,
+      max_results: 3,
       order: :relevance,
       page_token: next_page_token,
     }
@@ -17,5 +18,15 @@ class YoutubeController < ApplicationController
 
   def search
     @youtube_data = find_videos(params[:keyword])
+    @playlists = Playlist.all
+  end
+
+  def delete
+    @playlist = Playlist.find_by(id: params[:playlist_id])
+    @video = Video.find_by(id: params[:id])
+    if @video.destroy
+      flash[:notice] = "削除が完了しました"
+      redirect_to("/playlist/#{@playlist.id}/detail")
+    end
   end
 end
