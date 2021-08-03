@@ -3,7 +3,11 @@
   <p>登録されている動画がありません</p>
 <% else %>
   <% @videos.each do |video| %>
-    <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.videoId %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <%= link_to("削除","/playlist/#{@playlist.id}/video/delete/#{video.id}") %>
+    <div class="contents-container">
+      <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.videoId %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="detail-delete-button">
+        <%= link_to("削除","/playlist/#{@playlist.id}/video/delete/#{video.id}",{class: "delete-button"}) %>
+      </div>
+    </div>
   <% end %>
 <% end %>

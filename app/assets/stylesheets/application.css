@@ -13,8 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
 header{
   background-color: #00ACEE;
+}
+
+p{
+  text-align: center;
+}
+
+.centered{
+  text-align: center;
 }
 
 .flash{
