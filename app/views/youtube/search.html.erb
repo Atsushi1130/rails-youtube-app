@@ -27,22 +27,24 @@
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <p>登録したいプレイリストを選択してください</p>
-      <p><%= @youtube_data.items[1].id.video_id %></p>
       <% @playlists.each do |playlist| %>
         <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[1].id.video_id}",{method: "post"}) %></p>
       <% end %>
-      <a class="js-modal-close" href="">閉じる</a>
+      <div class="centered">
+        <a class="js-modal-close" href="">閉じる</a>
+      </div>
     </div>
   </div>
   <div class="modal js-modal-2">
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <p>登録したいプレイリストを選択してください</p>
-      <p><%= @youtube_data.items[2].id.video_id %></p>
       <% @playlists.each do |playlist| %>
         <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[2].id.video_id}",{method: "post"}) %></p>
       <% end %>
-      <a class="js-modal-close" href="">閉じる</a>
+      <div class="centered">
+        <a class="js-modal-close" href="">閉じる</a>
+      </div>
     </div>
   </div>
   <% @index += 1 %>
