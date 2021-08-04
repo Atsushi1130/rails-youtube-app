@@ -1,5 +1,5 @@
 <h1><%= @playlist.name %></h1>
-<% if !@videos.present? %>
+<% if @videos.length == 0 %>
   <p>登録されている動画がありません</p>
 <% else %>
   <% @videos.each do |video| %>
