@@ -55,3 +55,111 @@ p{
   font-size: 24px;
   display: inline-block;
 }
+
+.contents{
+  padding-bottom: 100px;
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+  background-color: #0099FF;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+}
+.footer_container{
+  position:relative;
+  height: 100%;
+}
+.footer-button1{
+  border: solid white;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  border-radius: 30px;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 30%;
+  margin: auto;
+  left: 30%;
+  height: 40%;
+}
+.footer-button2{
+  border: solid white;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: white;
+  color: #0099FF;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 30%;
+  margin: auto;
+  left: 70%;
+  height: 40%;
+}
+.footer-button1:hover{
+  opacity: 0.6;
+}
+.footer-button2:hover{
+  opacity: 0.6;
+}
+.footer_des{
+  color:white;
+  font-size: 150%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 30%;
+  margin: auto 0;
+}
+
+
+/* メディアクエリ */
+
+/* iPad以下 */
+@media screen and (max-width: 768px){
+  .footer_container{
+    position: relative;
+  }
+  .footer_des{
+    display: none;
+  }
+  .footer-button1{
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 50%;
+    right: 40%;
+  }
+  .footer-button2{
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 50%;
+    left: 40%;
+  }

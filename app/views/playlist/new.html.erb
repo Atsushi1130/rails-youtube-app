@@ -1,15 +1,15 @@
-<%= form_tag("/create/playlist") do %>
-  <h1>新規作成</h1>
-  <div class="create-form-container">
-    <% @playlist.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-    <p>プレイリスト名</p>
-    <input type="text" name="name" class="form">
-    <p>説明文(任意)</p>
-    <textarea name="description" class="form"></textarea>
-    <br>
-    <br>
-    <input type="submit" value="送信" class="submit-button">
-  </div>
-<% end %>
+<div id="form">
+  <h1 class="form-title">新規作成</h1>
+  <%= form_tag("/create/playlist") do %>
+    <div class="create-form-container">
+      <% @playlist.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+      <p>プレイリスト名</p>
+      <p class="name"><input type="name" name="name"></p>
+      <p>説明文(任意)</p>
+      <p class="description"><textarea type="description" name="description"></textarea></p>
+      <p class="submit"><input type="submit" value="送信"></p>
+    </div>
+  <% end %>
+</div>

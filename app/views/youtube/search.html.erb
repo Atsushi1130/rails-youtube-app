@@ -15,8 +15,12 @@
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <p>登録したいプレイリストを選択してください</p>
-      <% @playlists.each do |playlist| %>
-        <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[0].id.video_id}",{method: "post"}) %></p>
+      <% if @playlists.length == 0 %>
+        <p>まだプレイリストが作成されていません。<%= link_to("こちら","/new/playlist") %>から作成してください！</p>
+      <% else %>
+        <% @playlists.each do |playlist| %>
+          <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[0].id.video_id}",{method: "post"}) %></p>
+        <% end %>
       <% end %>
       <div class="centered">
         <a class="js-modal-close" href="">閉じる</a>
@@ -27,8 +31,12 @@
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <p>登録したいプレイリストを選択してください</p>
-      <% @playlists.each do |playlist| %>
-        <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[1].id.video_id}",{method: "post"}) %></p>
+      <% if @playlists.length == 0 %>
+        <p>まだプレイリストが作成されていません。<%= link_to("こちら","/new/playlist") %>から作成してください！</p>
+      <% else %>
+        <% @playlists.each do |playlist| %>
+          <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[1].id.video_id}",{method: "post"}) %></p>
+        <% end %>
       <% end %>
       <div class="centered">
         <a class="js-modal-close" href="">閉じる</a>
@@ -39,8 +47,12 @@
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <p>登録したいプレイリストを選択してください</p>
-      <% @playlists.each do |playlist| %>
-        <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[2].id.video_id}",{method: "post"}) %></p>
+      <% if @playlists.length == 0 %>
+        <p>まだプレイリストが作成されていません。<%= link_to("こちら","/new/playlist") %>から作成してください！</p>
+      <% else %>
+        <% @playlists.each do |playlist| %>
+          <p><%= link_to(playlist.name,"/playlist/#{playlist.id}/register/#{@youtube_data.items[2].id.video_id}",{method: "post"}) %></p>
+        <% end %>
       <% end %>
       <div class="centered">
         <a class="js-modal-close" href="">閉じる</a>

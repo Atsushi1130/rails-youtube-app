@@ -2,7 +2,11 @@ class PlaylistController < ApplicationController
   before_action :flag
 
   def index
-    @playlists = Playlist.all
+    if @current_user
+      @playlists = Playlist.where(user_id: @current_user.id)
+    else
+      @playlists
+    end
   end
 
   def detail
@@ -21,6 +25,7 @@ class PlaylistController < ApplicationController
     @playlist = Playlist.new(
       name: params[:name],
       description: params[:description],
+      user_id: @current_user.id,
     )
     @playlists
     if @playlist.save

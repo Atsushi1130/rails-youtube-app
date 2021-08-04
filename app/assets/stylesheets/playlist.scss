@@ -49,32 +49,19 @@ h1{
   opacity: 0.8;
 }
 
-/* new.html.erb */
-.create-form-container{
-  border: solid black 1px;
-  width: 40%;
-  margin: auto;
-  text-align: center;
-  height: 300px;
-  background-color: #dcdcdc;
-}
-.form{
-  width: 60%;
-}
-.submit-button{
-  width: 20%;
-  padding: 10px 0;
-  margin-bottom: 20px;
-  background-color: #00ACEE;
-  border: solid #dcdcdc;
-  border-radius: 10px;
-  color: white;
-}
-.submit-button:hover{
-  opacity: 0.8;
-}
-
 /* detail.html.erb */
 .detail-delete-button{
   padding-top: 10px;
 }
+
+/*new.html.erb*/
+.description{
+  margin-bottom: 20px;
+}
+textarea[type="description"] {
+  width: 300px;
+  padding: 4px;
+  font-size: 14px;
+  display: block;
+  margin:0 auto;
+  }
