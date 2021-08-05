@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/create/playlist" => "playlist#create"
   get "/delete/:id" => "playlist#delete"
   get "/playlist/:id/detail" => "playlist#detail"
+  get "/playlist/:id/autoplay" => "playlist#autoplay"
   post "playlist/:playlist_id/register/:video_id" => "playlist#register"
   get "/signup" => "user#new"
   post "/users/create" => "user#create"

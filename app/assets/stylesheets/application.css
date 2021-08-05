@@ -80,17 +80,13 @@ footer{
   transition-duration: 0.2s;
   border-radius: 30px;
   padding: 10px;
-  color: white;
+  background-color: white;
+  color: #0099FF;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10%;
-  height: 30%;
-  margin: auto;
+  top: 50%;
   left: 30%;
-  height: 40%;
+  transform: translate(0%,-50%);
+  width: 10%;
 }
 .footer-button2{
   border: solid white;
@@ -103,15 +99,10 @@ footer{
   background-color: white;
   color: #0099FF;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  right: 30%;
+  transform: translate(0%,-50%);
   width: 10%;
-  height: 30%;
-  margin: auto;
-  left: 70%;
-  height: 40%;
 }
 .footer-button1:hover{
   opacity: 0.6;
@@ -119,17 +110,12 @@ footer{
 .footer-button2:hover{
   opacity: 0.6;
 }
-.footer_des{
-  color:white;
-  font-size: 150%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  height: 30%;
-  margin: auto 0;
+.logout{
+  float: right;
+  color: white;
+  padding-top: 1%;
+  padding-right: 5%;
+  text-decoration: none;
 }
 
 

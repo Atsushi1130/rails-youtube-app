@@ -53,4 +53,12 @@ class PlaylistController < ApplicationController
       redirect_to("/")
     end
   end
+
+  def autoplay
+    @flag = true
+    @playlist = Playlist.find_by(id: params[:id])
+    @videos = Video.where(playlistId: params[:id])
+    @index = 0
+    @count = 0
+  end
 end

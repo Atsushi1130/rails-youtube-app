@@ -3,7 +3,7 @@ class YoutubeController < ApplicationController
 
   def find_videos(keyword)
     service = Google::Apis::YoutubeV3::YouTubeService.new
-    service.key = 'API-KEY'
+    service.key = 'AIzaSyCfYzxEOz5wNahVUMS11Hjdhf2-9VajLhQ'
 
     next_page_token = nil
     opt = {
@@ -18,9 +18,13 @@ class YoutubeController < ApplicationController
 
   def search
     @youtube_data = find_videos(params[:keyword])
-    @playlists = Playlist.where(user_id: @current_user.id)
-    @index = 0
+    if @current_user
+      @playlists = Playlist.where(user_id: @current_user.id)
+    else
+      @playlists = nil
+    end
     @flag = true
+    @index = 0
   end
 
   def delete

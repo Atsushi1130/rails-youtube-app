@@ -7,6 +7,7 @@
   <p>登録されている動画がありません</p>
   <p>上の検索ボックスから、動画を登録しましょう</p>
 <% else %>
+  <p><%= link_to("自動再生","/playlist/#{@playlist.id}/autoplay", data: {"turbolinks" => false}) %></p>
   <% @videos.each do |video| %>
     <div class="contents-container">
       <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.videoId %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
